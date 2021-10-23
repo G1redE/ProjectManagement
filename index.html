@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Managemment</title>
+    <link rel="stylesheet" href="./index.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="CenterDIV">
+        <div class="divFloat">
+            <input type="button" id="btClose" class="btClose" value="x"  onclick="closediv()"/>
+            <form action="javascript:void(0);" onsubmit="onSubmit()">
+                <div class="input_box">
+                <label>Project Name:</label>
+                <input type="text" class="input_text" id="project_name" name="project_name" required/>
+                </div>
+                <div class="input_box">
+                <label>Starting Date:</label>
+                <input type="date" class="input_text" id="date_name" name="date_name" required/>
+                </div>
+                <div class="input_box">
+                    <label>Status:</label>
+                    <select class="input_text" name="status_name" id="status_name" required>
+                        <option></option>
+                        <option value="completed"> Completed</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <div class="input_box">
+                    <label>Progress:</label>
+                    <input type="range" class="input_text" id="progress_name"name="progress_name" min=0 max=100 step="10" required/>
+                 </div>
+
+                 <input type="submit" id="submit_button" name="submit_button" >
+            </form>
+            
+        
+        </div>
+    </div>
+    <div id="CDIV">
+        <div class="divF">
+            <input type="button" id="btClose" class="btClose" value="x"  onclick="closediv2()"/>
+            <form id="formnew" action="javascript:void(0);" onsubmit="newadd()" >
+                <div class="input_box">
+                <label>Project Name:</label>
+                <input type="text" class="input_text" id="project2_name" name="project_name" required/>
+                </div>
+                <div class="input_box">
+                <label>Starting Date:</label>
+                <input type="date" class="input_text" id="date2_name" name="date_name" required/>
+                </div>
+                <div class="input_box">
+                    <label>Status:</label>
+                    <select class="input_text" name="status_name" id="status2_name" required>
+                        <option></option>
+                        <option value="completed"> Completed</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <div class="input_box">
+                    <label>Progress:</label>
+                    <input type="range" class="input_text" id="progress2_name"name="progress_name" min=0 max=100 step="10" required/>
+                 </div>
+
+                 <input type="submit" id="submit_button" name="submit_button" >
+            </form>
+            
+        
+        </div>
+    </div>
+    <header>
+        <div>
+            <h3>The Total Number of Projects:<span id="totalnum">#</span></h3>
+        </div>
+        <div>
+            <h3>Number of Completed Projects:<span id="completednum">#</span></h3>
+        </div>
+        <div><input type="text" id="myinput" name="myinput" placeholder="search" onkeyup="searchFun()"/></div>
+    </header>
+    <main>
+        <div class="list_header">
+            <div class="serial_header">
+                <p>#</p>
+            </div>
+            <div class="projects_header">
+                <p>Projects</p>
+            </div>
+            <div class="startdate_header">
+                <p>Start Date</p>
+            </div>
+            <div class="status_header">
+                <p>Status</p>
+            </div>
+            <div class="team_header">
+                <p>Team</p>
+            </div>
+            <div class="progress_header">
+                <p>Progress</p>
+            </div>
+            <div class="action_header">
+                <p>Action</p>
+            </div>
+        </div>
+        <div class="list" id="list"></div>
+        <div class="pagenumbers" id="pagination"></div>
+        <div class="newproject" id="newproject">
+            <input type="button" id="btnew" class="btnew" title="clickhere" value="+"  onclick="newProject()"/>
+
+
+        </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
